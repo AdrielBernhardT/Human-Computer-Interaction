@@ -349,11 +349,16 @@ img{
 .description{
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
     border: 2px solid white;
     background-color: var(--container-color);
     margin-top: 1rem;
     overflow: hidden;
+    height: 100%;
+    position: absolute;
+    top: 0;
 }
 
 .Name__agent{
@@ -369,6 +374,7 @@ img{
     padding: 1rem;
     border: 2px solid white;
     background-color: var(--container-color);
+    overflow: scroll;
     margin-top: 1rem;
 }
 
@@ -419,9 +425,11 @@ img{
 
 .show-desc{
     right: 0;
+    padding-right: 3rem;
+    width: 50%;
     position: absolute;
+    /* float: inline-e */
     justify-content: center;
-    align-items: center;
     transition: ease-in-out .5s;
 }
 
