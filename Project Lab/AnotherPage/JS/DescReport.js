@@ -1,4 +1,4 @@
-let form = document,getElementById('container')
+let form = document.getElementById('container')
 
 form.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -11,7 +11,7 @@ form.addEventListener('submit', function(event) {
         return;
     }
 
-    alert('Login successful');
     form.reset();
-    window.location.href = "DescReport.html";
+    alert('Report submitted successfully');
+    window.location.href = "../../../index.html";
 });
