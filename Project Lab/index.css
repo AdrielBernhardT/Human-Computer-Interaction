@@ -1,5 +1,5 @@
 /* Responsive typography */
-@media screen and (min-width: 1152) {
+@media screen and (min-width: 1152px) {
     :root {
         --biggest-font-size: 5.5rem;
         --h1-font-size:2.5rem;
@@ -11,7 +11,7 @@
     }
 }
 
-@media screen and (min-width: 1820) {
+@media screen and (min-width: 1820px) {
     :root {
         --biggest-font-size:10.25rem;
         --h1-font-size:5rem;
@@ -157,6 +157,7 @@ img{
 
     .Agent__container{
         justify-content: center;
+        
     }
 }
 
@@ -315,19 +316,22 @@ img{
     display: flex;
     flex-direction: row;
     gap: .5rem;
-    height: 100%;
+    height: 12.5vh;
+    width: 100%;
+    justify-content: center;
+    /* align-items: center; */
 }
 
-.container__tumpuk{
+/* .container__tumpuk{
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: .5rem;
     width: fit-content;
-}
+} */
 
 .home__img__potrait{
-    width: 15%;
+    width: auto;
     aspect-ratio: 3/4;
 }
 
@@ -596,20 +600,54 @@ img{
 
 
 /* NEWS */
+.news{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
 .News__header{
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-bottom: 1.5rem;
 }
 
-.News__subtitle{
-    font-size: var(--h3-font-size);
-    color: var(--text-color-light);
-}  
+.news__cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 170px; 
+    padding: .5rem;
+    background-color: hsla(0, 0%, 100%, .2);
+    border-radius: 8px;
+    backdrop-filter: blur(24px);
+    flex-shrink: 0;
+    -webkit-backdrop-filter: blur(24px); /* Buat Safari */
+}
 
+.news__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto;
+    width: auto;
+    padding-top: 1.5rem;
+    margin: 0 50px;
+    scrollbar-width: none;
+    scroll-behavior: smooth;  scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+.news__cards img{
+    border: #fff 2px solid;
+    margin-bottom: .5rem;
+}
 
 /* Footer */
 .footer{
@@ -750,6 +788,108 @@ img{
         row-gap: 1.5rem;
     }
 
+    /* .Agent__container {
+        flex-direction: column;
+        align-items: center;
+    } */
+
+    .Agent__name {
+        font-size: 12px;
+    }
+
+    .Agent__title {
+        font-size: 11px;
+    }
+
+    .Agent__image {
+        height: 250px;
+        width: 150px;
+    }
+    
+    .Map__card {
+        width: 50%; 
+    }
+    
+    .Map__card-inner {
+        width: 50%;
+        height: 50%;
+    }
+
+    .Map__container {
+        display: grid; /* Use grid layout */
+        grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+        gap: 1.5rem; /* Space between grid items */
+        width: 100%; /* Ensure the grid spans the full container width */ 
+        padding: 1.5rem; /* Add padding to the top and bottom */
+        z-index: 999;
+    }
+
+    /* Card styles */
+    .Map__card {
+        position: relative;
+        width: 100%; /* Ensure cards take up full width of their grid cell */
+        aspect-ratio: 4/3;
+    }
+    
+    .Map__card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%; /* Fill the card container */
+        transform: none; /* Remove flipping or sliding behavior */
+        transition: none; /* Disable animation transitions */
+    }
+    
+    .Map__card-front,
+    .Map__card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%; /* Keep the card faces filling the card area */
+        backface-visibility: hidden; /* Prevent flipping if enabled */
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .Map__card-front {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 125%);
+    }
+    
+    /* Card images */
+    .Map__card-img-front,
+    .Map__card-img-back {
+        width: 100%;
+        height: 100%;
+        object-position: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 834px){
+    .container {
+        margin-inline: 1rem;
+    }
+
+    .home__title {
+        width: 90%;
+        font-size: var(--h2-font-size);
+    }
+
+    .home__description {
+        font-size: var(--normal-font-size);
+        text-align: center;
+        color: var(--title-color);
+    }
+
+    .nav__list {
+        row-gap: 1.5rem;
+    }
+
     .Agent__container {
         flex-direction: column;
         align-items: center;
@@ -758,6 +898,11 @@ img{
     .Agent__image {
         height: 250px;
         width: 150px;
+    }
+    .Best__Agent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -770,10 +915,16 @@ img{
         scroll-snap-type: x mandatory;
         perspective: 1000px;
         scrollbar-width: none; /* buat Firefox */
+        padding: 20px;
     }
 
     /* Hide scrollbars */
     .Map__container::-webkit-scrollbar {
         display: none; /* buat Chrome, Safari, dan Edge */
+    }
+    .Best__Agent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

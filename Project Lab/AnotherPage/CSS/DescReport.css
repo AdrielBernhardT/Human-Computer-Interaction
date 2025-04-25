@@ -173,8 +173,7 @@ textarea:focus {
     text-decoration: underline;
     color: #ff6b78;
 }
-  
-/* Responsive Adjustments */
+
 @media (max-width: 768px) {
     .container {
         padding: 2rem;

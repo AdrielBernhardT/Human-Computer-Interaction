@@ -99,6 +99,10 @@ body {
     border-bottom: 3px solid var(--accent);
 }
 
+.Eye_Icon{
+    cursor: pointer;
+}
+
 .username_textbox,
 .pass_textbox {
     position: relative;
